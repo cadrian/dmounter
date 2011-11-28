@@ -1,0 +1,5 @@
+# to be sourced
+
+options=uid=$(id -u),gid=$(id -g)
+
+sudo mount -t ntfs-3g "$share" "$mountpoint" -o "$options"

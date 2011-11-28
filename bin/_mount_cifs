@@ -1,0 +1,9 @@
+# to be sourced
+
+if [ -z "$LDAP_PASSWORD" ]; then
+    export LDAP_PASSWORD=$(zenity --entry --hide-text --title="LDAP password" --text="Please enter your LDAP password")
+fi
+
+options=user="PARKEON/$USER%$LDAP_PASSWORD",iocharset=utf8,uid=$(id -u),gid=$(id -g)
+
+sudo mount -t cifs "$share" "$mountpoint" -o "$options"

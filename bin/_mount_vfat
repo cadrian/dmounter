@@ -1,0 +1,5 @@
+# to be sourced
+
+options=iocharset=utf8,uid=$(id -u),gid=$(id -g)
+
+sudo mount -t vfat "$share" "$mountpoint" -o "$options"
