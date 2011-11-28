@@ -1,0 +1,15 @@
+Manage your mountpoints with dmenu
+
+http://tools.suckless.org/dmenu/
+
+Usage: put your mountpoints in .map: three fields <share> <point> <type> where
+
+ * <share> is the device to mount (e.g. /dev/sdb1 or //WINDOWS_SERVER/point)
+ * <point> is the name of the mount directory; also used as key for dmenu
+ * <type> is one of the supported mounting type (currently cifs, vfat, and ntfs)
+
+Example:
+
+--8<--------
+/dev/sdb1 usbkey vfat
+-------->8--
