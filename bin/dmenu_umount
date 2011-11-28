@@ -3,6 +3,6 @@
 MOUNT_ROOT=$(dirname $(dirname $(readlink -f $0)))
 MAP=$MOUNT_ROOT/.map
 
-if mount=$(cat $MAP | awk '{print $2}' | while read point; do test -d $MOUNT_ROOT/mnt/$point && echo $point; done | sort | dmenu -b -i -p 'Unmount: ' -fn fixed -nb '#3f3f3f' -nf ivory -sb '#772855' -sf white); then
+if mount=$(cat $MAP | awk '{print $2}' | while read point; do test -d $MOUNT_ROOT/mnt/$point && echo $point; done | sort | dmenu -b -i -p 'Unmount: ' -fn fixed -nb '#3f3f3f' -nf ivory -sb '#557728' -sf white); then
     $MOUNT_ROOT/bin/umount_shared.sh $mount
 fi
