@@ -7,7 +7,7 @@ do_umount() {
     point="$1"
     mountpoint="$MOUNT_ROOT/mnt/$point"
     if [ -d "$mountpoint" ]; then
-        sudo umount "$mountpoint"
+        gksudo umount "$mountpoint"
         rmdir "$mountpoint"
         notify-send -u low "$point unmounted."
     fi

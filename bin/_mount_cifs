@@ -6,4 +6,4 @@ fi
 
 options=user="PARKEON/$USER%$PASSWORD",iocharset=utf8,uid=$(id -u),gid=$(id -g)
 
-sudo mount -t cifs "$share" "$mountpoint" -o "$options"
+gksudo mount -t cifs "$share" "$mountpoint" -o "$options"
