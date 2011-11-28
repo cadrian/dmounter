@@ -2,4 +2,4 @@
 
 options=uid=$(id -u),gid=$(id -g)
 
-gksudo mount -t ntfs-3g "$share" "$mountpoint" -o "$options"
+gksudo -- mount -t ntfs-3g "$share" "$mountpoint" -o "$options"

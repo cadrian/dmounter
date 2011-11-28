@@ -2,4 +2,4 @@
 
 options=iocharset=utf8,uid=$(id -u),gid=$(id -g)
 
-gksudo mount -t vfat "$share" "$mountpoint" -o "$options"
+gksudo -- mount -t vfat "$share" "$mountpoint" -o "$options"
