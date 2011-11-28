@@ -1,9 +1,9 @@
 # to be sourced
 
-if [ -z "$LDAP_PASSWORD" ]; then
-    export LDAP_PASSWORD=$(zenity --entry --hide-text --title="LDAP password" --text="Please enter your LDAP password")
+if [ -z "$PASSWORD" ]; then
+    PASSWORD=$(zenity --entry --hide-text --title="Password" --text="Please enter your password to mount $point")
 fi
 
-options=user="PARKEON/$USER%$LDAP_PASSWORD",iocharset=utf8,uid=$(id -u),gid=$(id -g)
+options=user="PARKEON/$USER%$PASSWORD",iocharset=utf8,uid=$(id -u),gid=$(id -g)
 
 sudo mount -t cifs "$share" "$mountpoint" -o "$options"
