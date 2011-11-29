@@ -9,7 +9,7 @@ do_mount() {
     type="$3"
     mountpoint="$MOUNT_ROOT/mnt/$point"
     if test -d "$mountpoint" && { mount | grep -q '^'"$share"' on '"$mountpoint"; } then
-        echo "$share already mounted"
+        notify-send -u low "$share already mounted!"
     else
         test -d "$mountpoint" || mkdir -p "$mountpoint"
         . $MOUNT_ROOT/bin/_mount_"$type"
