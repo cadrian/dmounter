@@ -5,5 +5,5 @@ MAP=$MOUNT_ROOT/.map
 
 if mount=$(cat $MAP | awk '{if ($3 == "cifs" || system("test -e "$1) == 0) print $2}' | sort | dmenu -b -i -p 'Mount: ' -fn fixed -nb '#3f3f3f' -nf ivory -sb '#557728' -sf white); then
     dir=$($MOUNT_ROOT/bin/mount_shared.sh $mount)
-    test -n "$dir" -a -d $dir && thunar $dir
+    test -n "$dir" -a -d "$dir" && thunar "$dir"
 fi
